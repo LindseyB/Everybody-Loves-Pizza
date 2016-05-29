@@ -14,13 +14,19 @@ define dd  = Character('Deep Dish Pizza', color="#ff3300")
 define neo = Character('Neopolitan Pizza', color="#cc6699")
 define s   = Character('Sicilian Pizza', color="#3399ff")
 
-# track who has been spoken to
+# track who has been spoken to and how much they like the player
 init python:
     spoke_ny  = False
     spoke_ca  = False
     spoke_dd  = False
     spoke_neo = False
     spoke_s   = False
+    
+    aff_ny    = 0
+    aff_ca    = 0
+    aff_dd    = 0
+    aff_neo   = 0
+    aff_s     = 0
 
 # The game starts here.
 label start:
@@ -70,6 +76,76 @@ label ny_style:
     show pizza newyork at right with dissolve
     
     ny "Hey, how's it goin'?"
+    
+    menu:
+        "Eh... people don't actually want to know the answer to that question.":
+            ny "I know, right? Yet we all still bother with it anyway."
+            $ aff_ny += 5
+        "Okay, you?":
+            $ aff_ny += 1
+            ny "I'm doing pretty well."
+        "Super good! The best really! Oh my gosh I have so many great things going on.":
+            ny "Oh... wow... aren't you spunky..."
+            $ aff_ny -= 10
+    
+    ny "So, what do you enjoy doing in your free time?"
+    
+    menu:
+        "Going places, expirencing new things, going to bars, I like doing it all.":
+            ny "You must be busy a lot."
+            $ aff_ny += 1
+        "Meh. Not much really.":
+            ny "That much make life hard."
+        "Traveling. Traveling and more traveling. Also boats.":
+            ny "Do your parents have a trust fund or something that you can have expensive taste?"
+            $ aff_ny -= 10
+    
+    ny "What kind of music do you like?"
+    
+    menu:
+        "Everything but country and rap, more like CRAP amirite?":
+            ny "That's kinda close-minded?"
+            $ aff_ny -= 10
+        "A little bit of everything, but I've been digging post-punk lately":
+            ny "Oh yeah, how good is Bauhaus?"
+            $ aff_ny += 10
+        "Everything. All music is good. Mostly I turn on the radio and whatever is on I love.":
+            ny "Oh. Well, that's good."
+            $ aff_ny += 1
+            
+    ny "If you could live anywhere in the world where would it be?"
+    
+    menu:
+        "New York, of course, there's everything there.":
+            ny "Damn straight!"
+            $ aff_ny += 10
+        "I dunno, the beach probably. Or the jersey shore. Have you seen that show?":
+            ny "Ugh... no."
+            $ aff_ny -= 10
+        "France, I love the idea of living abroad.":
+            ny "Oh that could be cool."
+            $ aff_ny += 1
+            
+    ny "What's your favorite color?"
+    
+    menu:
+        "GLITTER!":
+            ny "That's not a color."
+            $ aff_ny -= 10
+        "Black like my heart":
+            ny "Yeah, me too."
+            $ aff_ny += 10
+        "Blue":
+            ny "Oh yeah that's a nice color."
+            $ aff_ny += 1
+            
+    
+    if aff_ny >= 10:
+        ny "It was really nice meeting you."
+    elif aff_ny > 0:
+        ny "See ya!"
+    else:
+        ny "Alright, I can't take much more of this conversation."
     
     $ spoke_ny = True
     jump pizza_select
