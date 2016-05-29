@@ -313,6 +313,78 @@ label neopolitan:
     
     neo "Ciao bella"
     
+    menu:
+        "Cioa":
+            neo "Close enough."
+            $ aff_neo += 1
+        "Ciao":
+            neo "parli italiano?"
+            $ aff_neo += 10
+        "Hola":
+            neo "What language is that?"
+            $ aff_neo -= 10
+            
+    neo "Who's your favorite painter?"
+    
+    menu:
+        "Michelangelo":
+            neo "I love him"
+            $ aff_neo += 10
+        "Monet":
+            neo "He's okay I guess."
+            $ aff_neo += 1
+        "C. M. Coolidge. You know the painting of dogs playing poker? He did the that. He's a genius.":
+            neo "I don't really like the idea of things doing things they don't normally do. Dogs never play poker so why do we want to see what it would look like. It's just silly."
+            $ aff_neo -= 10
+            
+    
+    neo "Why are your eyes so dialated?"
+    
+    menu:
+        "The better to see you with my dear.":
+            neo "Nice."
+            $ aff_neo += 10
+        "YOUR EYES ARE DIALATED! YEAH! TAKE THAT!":
+            neo "I didn't mean it like an insult."
+            $ aff_neo -= 10
+        "Oh. I took some cold medicine and now everything is pizza.":
+            neo "Well, who hasn't done that before."
+            $ aff_neo += 1
+            
+    neo "Okay, here's a tricky one. Favorite opera?"
+    
+    menu:
+        "Cats... that's an opera right? I think it's an Opera.":
+            neo "It's not, but I'll allow it."
+            $ aff_neo += 1
+        "Tosca. Everyone loves Puccini.":
+            neo "Yes! So good!"
+            $ aff_neo += 10
+        "Um... pizza...? I dunno why I said pizza just now, but yeah I'm gonna stick with pizza.":
+            neo "Well, I'm not sure that really counts."
+            $ aff_neo -= 10
+            
+    neo "Last question. Ready!? If you could have a super power what would it be?"
+    
+    menu:
+        "Everything pizza.":
+            neo "What???"
+            $ aff_neo -= 10
+        "Invisibility":
+            neo "Pretty handy."
+            $ aff_neo += 1
+        "Flight!":
+            neo "The best!!!"
+            $ aff_neo += 10
+            
+    if aff_neo >= 10:
+        neo "Arrivederci bella."
+    elif aff_neo > 0:
+        neo "Nice meeting you."
+    else:
+        neo "Yeah. Bye."
+            
+    
     $ spoke_neo = True
     jump pizza_select
     
