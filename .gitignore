@@ -1,7 +1,9 @@
 # Renpy files to ignore
-
-tmp/*
+tmp
 log.txt
+saves
+cache
+env
 
 # Windows specific ignores
 Thumbs.db
