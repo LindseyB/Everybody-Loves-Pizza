@@ -233,7 +233,77 @@ label californian:
 label deep_dish:
     show pizza deepdish at right with dissolve
     
-    dd "Yo"
+    dd "Yo, how's it hanging?"
+    
+    menu:
+        "Down and slightly to the right":
+            dd "Nice!"
+            $ aff_dd += 10
+        "Good":
+            dd "Yeah, me too."
+            $ aff_dd += 1
+        "Have you noticed that everyone is pizza? See I took some cold medicine before this and now everyone is pizza.":
+            dd "What are you...? I don't want to know."
+            $ aff_dd -= 10
+    
+    dd "What's your favorite basketball team?"
+    
+    menu:
+        "I don't really watch much basketball.":
+            dd "You're missing out. It's pretty awesome."
+            $ aff_dd += 1
+        "I like the Knicks.":
+            dd "Be careful how loud you say that."
+            $ aff_dd -= 10
+        "Chicago Bulls, I just loved the Jordan-era basketball.":
+            dd "Hell yeah!"
+            $ aff_dd += 10
+    
+    dd "What do you like on your hotdog?"
+    
+    menu:
+        "Not a thing. I can eat it quicker that way. If you know what I mean?":
+            dd "I don't but I could get behind it. If you know what I mean?"
+            $ aff_dd += 5
+        "Chi-town style fo sho!":
+            dd "Aww yeah, son! You got it!"
+            $ aff_dd += 10
+        "Ew. I'm more into pizza. Are you sure you don't see pizza everywhere?":
+            dd "I don't and you don't know what you are missing."
+            $ aff_dd -= 10
+    
+    dd "If you could be any animal what would you be?"
+    
+    menu:
+        "Um... pizza is an animal right? I would be pizza. Pizza pizza! That's the sound a pizza makes.":
+            dd "Pizza is definitely not an animal"
+            $ aff_dd -= 10
+        "BEAR! ROAR!!!":
+            dd "Me too!!!"
+            $ aff_dd += 10
+        "Probably a cute bunny.":
+            dd "Aww, that's sweet."
+            $ aff_dd += 1
+            
+    dd "Okay, final question and it's a doozy. Desert island movie. Go!"
+    
+    menu:
+        "Gotta be Blues Brothers":
+            dd "We're on a mission from God!!!"
+            $ aff_dd += 10
+        "Star Wars":
+            dd "That's okay, I guess... for nerds."
+            $ aff_dd -= 1
+        "Teenage Mutant Ninja Turtules. You know with all the pizza. I kinda love pizza. I mean I'm in {b}love{/b} with pizza.":
+            dd "Um... that's um... great for you."
+            $ aff_dd -= 10
+            
+    if aff_dd >= 10:
+        dd "You gotta make sure I get those digits."
+    elif aff_dd > 0:
+        dd "Well, bye."
+    else:
+        dd "Um... why don't you talk to someone else."
     
     $ spoke_dd = True
     jump pizza_select
