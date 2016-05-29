@@ -1,7 +1,13 @@
 ﻿# You can place the script of your game in this file.
 
-# Declare images below this line, using the image statement.
-# eg. image eileen happy = "eileen_happy.png"
+# the pizzas
+image pizza newyork     = "nystyle.png"
+image pizza californian = "californian.png"
+image pizza deepdish    = "deepdish.png"
+image pizza neopolitan  = "neopolitan.png"
+image pizza sicilian    = "sicilian.png"
+
+image bg pizzaria       = "background.png"
 
 # Declare characters used by this game.
 define e = Character('Eileen', color="#c8ffc8")

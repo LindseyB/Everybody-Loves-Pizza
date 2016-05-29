@@ -2,3 +2,6 @@
 
 tmp/*
 log.txt
+
+# Windows specific ignores
+Thumbs.db
