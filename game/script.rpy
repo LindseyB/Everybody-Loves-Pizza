@@ -66,10 +66,56 @@ label pizza_select:
         "How about some sizzlin' sicilian" if not spoke_s:
             jump sicilian
         "Well I think I've made a decision" if (spoke_ny and spoke_ca and spoke_dd and spoke_neo and spoke_s):
-            # add the end here
-            "YES!"
-        
+            jump player_choice
     
+    return
+    
+
+label player_choice:
+    "Well, who do you pick?"
+    
+    menu:
+        "New York Style":
+            show pizza newyork with dissolve
+            if aff_ny > 10:
+                play sound "harp.mp3"
+                ny "Awesome! I liked you a lot too!"
+            else:
+                play sound "fail.mp3"
+                ny "I'm not sure this will work out."
+        "Californian":
+            show pizza californian with dissolve
+            if aff_ca > 10:
+                play sound "harp.mp3"
+                ca "I could tell from the moment I sensed your energy."
+            else:
+                play sound "fail.mp3"
+                ca "Um... yeah. I uh... my house is on fire and I have to leave."
+        "Deep Dish":
+            show pizza deepdish with dissolve
+            if aff_dd > 10:
+                play sound "harp.mp3"
+                dd "Yeah! That's what I am talking about!"
+            else:
+                play sound "fail.mp3"
+                dd "Please no."
+        "Neopolitan":
+            show pizza neopolitan with dissolve
+            if aff_neo > 10:
+                play sound "harp.mp3"
+                neo "Ti amo!"
+            else:
+                play sound "fail.mp3"
+                neo "Ti odio!"
+        "Sicilian":
+            show pizza sicilian with dissolve
+            if aff_s > 10:
+                play sound "harp.mp3"
+                s "Oh, cool I guess."
+            else:
+                play sound "fail.mp3"
+                s "Oh, sorry I have plans...?"
+                
     return
             
             
