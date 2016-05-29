@@ -393,5 +393,74 @@ label sicilian:
     
     s "Um... hi"
     
+    menu:
+        "Hi.":
+            s "Hi..."
+            $ aff_s += 10
+        "Bye.":
+            s "Bye..."
+            $ aff_s -= 10
+
+    s "I dunno what to say."
+    
+    menu:
+        "That's okay try asking a question.":
+            s "Okay I'll try it."
+            $ aff_s += 10
+        "Me neither.":
+            s "Talking to people is hard."
+            $ aff_s += 25
+        "Step up your game, you- you- you {b}pizza{/b}!":
+            s "Wait... did you call me pizza?"
+            $ aff_s -= 10
+    
+    s "Okay, a question. I got this. What do you like?"
+    
+    menu:
+        "What a garbage question! I like pizza, I also like other things, but really that would take too long to list.":
+            s "Mean!"
+            $ aff_s -= 20
+        "Err... maybe try again with something less vague?":
+            s "Okay I can do this!"
+            $ aff_s += 10
+        "PIZZA!!!":
+            s "Me too!"
+            $ aff_s += 20
+            
+    
+    s "Okay, what's your favorite co-op video game to play with your mom at home at night while it's raining outside?"
+    
+    menu:
+        "That might be too specific of a question... dial it in you'll get it.":
+            s "Okay, thanks for bearing with me."
+            $ aff_s += 5
+        "Um... Castle Crashers? I think. I don't get to play video games with my mom very often.":
+            s "Oh, me and my mom like playing Minecraft."
+            $ aff_s += 20
+        "...um.... pizza... um.... {i}::drools on self::{/i}":
+            s "You don't look so good."
+            $ aff_s -= 1
+            
+    s "Okay."
+    
+    menu:
+        "Um okay.":
+            s "Okay."
+            $ aff_s += 1
+        "Good.":
+            s "Good."
+            $ aff_s += 1
+        "{i}::Pokes the pizza::{/i} I expected you to be stickier.":
+            s "What?"
+            $ aff_s -= 10
+            
+    if aff_s >= 10:
+        s "I... {i}::blushes::{/i}"
+    elif aff_s > 0:
+        s "Maybe... {i}::stammer::{/i}"
+    else:
+        s "{i}::Walks away::{/i}"
+            
+    
     $ spoke_s = True
     jump pizza_select
