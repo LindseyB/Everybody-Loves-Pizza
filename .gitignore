@@ -4,6 +4,8 @@ log.txt
 saves
 cache
 env
+errors.txt
+traceback.txt
 
 # Windows specific ignores
 Thumbs.db
