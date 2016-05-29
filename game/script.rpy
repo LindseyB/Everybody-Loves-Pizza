@@ -156,6 +156,77 @@ label californian:
     
     ca "Namaste"
     
+    menu:
+        "Oh are you Hindu?":
+            "No, but it's not cultural appropriation because I said so."
+            $ aff_ca -= 10
+        "Oh I love yoga!":
+            "Me too!!!"
+            $ aff_ca += 10
+        "What does that even mean?":
+            "It's just a respectful greeting"
+            $ aff_ca -= 1
+            
+    ca "What do you like doing for exercise?"
+    
+    menu:
+        "Mostly yoga, but sometimes I like Tai Chi":
+            ca "Oh, me too!"
+            $ aff_ca += 10
+        "Exer-who!?":
+            ca "That thing you do to stay healthy?"
+            $ aff_ca -= 10
+        "I run, like the wind.":
+            ca "I love that!"
+            $ aff_ca += 1
+            
+    ca "How do you feel about avocados?"
+    
+    menu:
+        "What kind of question is that? It's like asking how you feel about pizza. Don't answer that...":
+            ca "Are you feeling okay?"
+            $ aff_ca -= 10
+        "I LOVE AVOCADOS!!! I only eat avocados and avocado adjacent things!":
+            ca "Oh we should split an avocado pizza sometime!"
+            $ aff_ca += 10
+        "They're food. I like them, but I don't like-like them.":
+            ca "Yeah, they're delicious."
+            $ aff_ca += 1
+            
+    ca "Do you recycle?"
+    
+    menu:
+        "Of course!!! I also compost! It smells amazingggggggg!":
+            ca "RIGHT!?!?!"
+            $ aff_ca += 10
+        "Um... yeah.":
+            ca "It's so important."
+            $ aff_ca += 1
+        "Do you have a problem? First it was avocados and now recyling questions? Is this actually happening to me?":
+            ca "Your pupils are looking a bit dialated."
+            $ aff_ca -= 10
+            
+    ca "Okay, how about an easy question;  What is brown and sticky?"
+    
+    menu:
+        "A stick!":
+            ca "Yesss!!!!"
+            $ aff_ca += 10
+        "Poop?":
+            ca "You might want to go to a doctor."
+            $ aff_ca += 1
+        "How about you answer a question? What is wrong with you? Seriously, what is wrong with you!?":
+            ca "Um... should I call 911?"
+            $ aff_ca -= 10
+            
+    if aff_ca >= 10:
+        ca "I think we might be soulmates."
+    elif aff_ca > 0:
+        ca "Have a good day."
+    else:
+        ca "Please, forget you ever met me."
+            
+    
     $ spoke_ca = True
     jump pizza_select
 
