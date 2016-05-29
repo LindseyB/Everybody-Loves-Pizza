@@ -181,7 +181,7 @@ init -1 python hide:
 
     ## Music that is played while the user is at the main menu.
 
-    # config.main_menu_music = "main_menu_theme.ogg"
+    config.main_menu_music = "pizza.mp3"
 
 
     #########################################
@@ -280,3 +280,5 @@ init -1 python hide:
 
     #########################################
     ## More customizations can go here.
+
+                                                              

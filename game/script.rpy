@@ -30,6 +30,7 @@ init python:
 
 # The game starts here.
 label start:
+    stop music fadeout 1.0
     
     scene bg pizzaria with fade
 
