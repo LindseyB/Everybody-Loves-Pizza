@@ -1,0 +1,4 @@
+# Renpy files to ignore
+
+tmp/*
+log.txt
